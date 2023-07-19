@@ -72,9 +72,8 @@ function App() {
   return (
     <>
       <div>
-        <Container fixed>
-            <Card sx={{display: 'flex'}}>
-              <Box sx={{width: '100%'}}>
+          <Card>
+              <Box>
                 <CardHeader
                   avatar={
                     <Avatar 
@@ -243,9 +242,7 @@ function App() {
                 </CardContent>
               </Box>
             </Card>
-          </Container>
       </div>
-     
     </>
   )
 }
