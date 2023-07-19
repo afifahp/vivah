@@ -72,8 +72,9 @@ function App() {
   return (
     <>
       <div>
-          <Card>
-              <Box>
+          <Container fixed>
+            <Card sx={{display: 'flex', width: 'md'}}>
+              <Box sx={{width: 'sm'}}>
                 <CardHeader
                   avatar={
                     <Avatar 
@@ -101,8 +102,13 @@ function App() {
                     {'Portofolio'}
                   </Link>
                   <Divider/>
-                  <Box sx={{width:'100%', borderBottom: 2, borderColor: 'divider'}}>
-                    <Tabs value={value} onChange={handleChange} aria-label='basic tabs example'>
+                  <Box sx={{width:'100%', borderBottom: 1, borderColor: 'divider'}}>
+                    <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    variant='scrollable'
+                    scrollButtons='auto'
+                    aria-label='basic tabs example'>
                       <Tab label="Experiences" {...a11yProps(0)}/>
                       <Tab label="Education" {...a11yProps(1)}/>
                       <Tab label="Skills" {...a11yProps(2)}/>
@@ -242,6 +248,7 @@ function App() {
                 </CardContent>
               </Box>
             </Card>
+          </Container>
       </div>
     </>
   )
