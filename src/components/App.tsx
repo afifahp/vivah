@@ -16,8 +16,7 @@ import {
   Tab,
   Tabs,
   Rating,
-  Typography,
-  createTheme} from '@mui/material'
+  Typography} from '@mui/material'
 import profilepic from '../assets/vivy.png'
 import '@fontsource/roboto/500.css'
 import '../styles/App.css'
@@ -57,7 +56,7 @@ function CustomTabPanel(props:TabPanelProps) {
   )
 }
 
-function a11yProps(index: number){
+function a11yProps(_index: number){
   return {
     id: 'simple-tab-${index}',
     'aria-controls': 'simple-tabpanel-${index}',
@@ -67,29 +66,13 @@ function a11yProps(index: number){
 function App() {
   const [value, setValue] = React.useState(0);
 
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 600,
-        md: 900,
-        lg: 1200,
-        xl: 1536,
-        mobile: 0,
-        tablet: 640,
-        laptop: 1024,
-        desktop: 1200,
-      }
-    }
-  })
-  
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   }
   return (
     <>
       <div>
-        <Container>
+        <Container fixed>
             <Card sx={{display: 'flex'}}>
               <Box sx={{width: '100%'}}>
                 <CardHeader
@@ -107,14 +90,15 @@ function App() {
                 <CardMedia
                   component='img'
                   alt='viv'
-                  sx={{height: 200}}
+                  sx={{height: 250}}
                   image='/src/assets/vivy.png'
                 />
                 <CardContent>
-                  <Typography variant='body1' component='body'>
+                  <Typography variant='h6' component='h5'>
                     A Software Engineer student in Bina Insani University, Bekasi, Indonesia. Love to create 3D Mini Interior, self made desktop organiser wallpaper, 2D Character Design chibi, anime and semi realism style. Currently upgrading 3D Modelling skills.
                   </Typography>
-                  <Link href="https://instagram.com/ievykitt" underline="none">
+                  <br/>
+                  <Link href="https://instagram.com/ievykitt" underline="none" variant='h6'>
                     {'Portofolio'}
                   </Link>
                   <Divider/>
