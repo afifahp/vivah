@@ -73,8 +73,8 @@ function App() {
     <>
       <div>
           <Container fixed>
-            <Card sx={{display: 'flex', width: 'md'}}>
-              <Box sx={{width: 'sm'}}>
+            <Card sx={{display: 'flex'}}>
+              <Box sx={{width: '100%'}}>
                 <CardHeader
                   avatar={
                     <Avatar 
@@ -101,8 +101,9 @@ function App() {
                   <Link href="https://instagram.com/ievykitt" underline="none" variant='h6'>
                     {'Portofolio'}
                   </Link>
+                  <br />
                   <Divider/>
-                  <Box sx={{width:'100%', borderBottom: 1, borderColor: 'divider'}}>
+                  <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
                     <Tabs
                     value={value}
                     onChange={handleChange}
@@ -116,7 +117,7 @@ function App() {
                     </Tabs>
                   </Box>
                   <CustomTabPanel value={value} index={0}>
-                  <List sx={{ width: '100%',  bgcolor: 'background.paper' }}>
+                  <List sx={{ bgcolor: 'background.paper' }}>
                         <ListItem alignItems="flex-start">
                           <ListItemText
                             primary="TUGU KUNSTKRING PALEIS"
