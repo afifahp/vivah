@@ -15,7 +15,9 @@ import {
   ListItemText,
   Tab,
   Tabs,
-  Typography} from '@mui/material'
+  Rating,
+  Typography,
+  createTheme} from '@mui/material'
 import profilepic from '../assets/vivy.png'
 import '@fontsource/roboto/500.css'
 import '../styles/App.css'
@@ -25,6 +27,15 @@ interface TabPanelProps{
   children?: React.ReactNode;
   index: number;
   value: number;
+}
+
+declare module '@mui/material/styles'{
+  interface BreakpointOverrides{
+    mobile: true;
+    tablet: true;
+    laptop: true;
+    desktop: true;
+  }
 }
 
 function CustomTabPanel(props:TabPanelProps) {
@@ -56,6 +67,22 @@ function a11yProps(index: number){
 function App() {
   const [value, setValue] = React.useState(0);
 
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+        mobile: 0,
+        tablet: 640,
+        laptop: 1024,
+        desktop: 1200,
+      }
+    }
+  })
+  
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   }
@@ -91,15 +118,16 @@ function App() {
                     {'Portofolio'}
                   </Link>
                   <Divider/>
-                  <Box sx={{borderBottom: 2, borderColor: 'divider'}}>
+                  <Box sx={{width:'100%', borderBottom: 2, borderColor: 'divider'}}>
                     <Tabs value={value} onChange={handleChange} aria-label='basic tabs example'>
                       <Tab label="Experiences" {...a11yProps(0)}/>
                       <Tab label="Education" {...a11yProps(1)}/>
                       <Tab label="Skills" {...a11yProps(2)}/>
+                      <Tab label="Language" {...a11yProps(3)}/>
                     </Tabs>
                   </Box>
                   <CustomTabPanel value={value} index={0}>
-                  <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                  <List sx={{ width: '100%',  bgcolor: 'background.paper' }}>
                         <ListItem alignItems="flex-start">
                           <ListItemText
                             primary="TUGU KUNSTKRING PALEIS"
@@ -144,7 +172,7 @@ function App() {
                       </List>
                   </CustomTabPanel>
                   <CustomTabPanel value={value} index={1}>
-                  <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                  <List sx={{ width: '100%',  bgcolor: 'background.paper' }}>
                         <ListItem alignItems="flex-start">
                           <ListItemText
                             primary="SMK PARAMITHA 1 JAKARTA"
@@ -185,7 +213,48 @@ function App() {
                       </List>
                   </CustomTabPanel>
                   <CustomTabPanel value={value} index={2}>
-                      
+                    <List sx={{ width: '100%',  bgcolor: 'background.paper' }}>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>Public Speaking - English</Typography>
+                        <Rating name="publics" value={4} precision={0.5}/>
+                      </ListItem>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>3D Modeling - Blender</Typography>
+                        <Rating name="blds" value={2.5} precision={0.5}/>
+                      </ListItem>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>Adobe Illustrator</Typography>
+                        <Rating name="ai" value={3} precision={0.5}/>
+                      </ListItem>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>Adobe Potoshop</Typography>
+                        <Rating name="ps" value={3} precision={0.5}/>
+                      </ListItem>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>Chibi Character - Digital 2D</Typography>
+                        <Rating name="chibi2D" value={3.5} precision={0.5}/>
+                      </ListItem>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>Semi-Realism - Digital 2D</Typography>
+                        <Rating name="realm" value={3.5} precision={0.5}/>
+                      </ListItem>
+                    </List>
+                  </CustomTabPanel>
+                  <CustomTabPanel value={value} index={3}>
+                    <List sx={{ width: '100%',  bgcolor: 'background.paper' }}>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>Indonesian - Native</Typography>
+                        <Rating name="idn" value={5} precision={0.5}/>
+                      </ListItem>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>English - Intermediate</Typography>
+                        <Rating name="usk" value={3.5} precision={0.5}/>
+                      </ListItem>
+                      <ListItem alignItems="flex-start"> 
+                        <Typography>French - Beginner</Typography>
+                        <Rating name="fr" value={1} precision={0.5}/>
+                      </ListItem>
+                    </List>
                   </CustomTabPanel>
                 </CardContent>
               </Box>
