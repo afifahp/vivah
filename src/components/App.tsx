@@ -97,7 +97,7 @@ function App() {
                   component='img'
                   alt='viv'
                   sx={{height: 250}}
-                  image={image}
+                  srcSet={image}
                 />
                 <CardContent>
                   <Typography variant='h6' component='h5'>
