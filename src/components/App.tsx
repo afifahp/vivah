@@ -30,6 +30,11 @@ interface TabPanelProps{
 
 declare module '@mui/material/styles'{
   interface BreakpointOverrides{
+    xs: false;
+    sm: false;
+    md: false;
+    lg: false;
+    xl: false;
     mobile: true;
     tablet: true;
     laptop: true;
@@ -91,7 +96,7 @@ function App() {
                   component='img'
                   alt='viv'
                   sx={{height: 250}}
-                  image='/src/assets/vivy.png'
+                  image='/assets/vivy.png'
                 />
                 <CardContent>
                   <Typography variant='h6' component='h5'>
@@ -102,14 +107,17 @@ function App() {
                     {'Portofolio'}
                   </Link>
                   <br />
+                  <br />
                   <Divider/>
                   <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
                     <Tabs
                     value={value}
                     onChange={handleChange}
-                    variant='scrollable'
+                    variant='fullWidth'
                     scrollButtons='auto'
-                    aria-label='basic tabs example'>
+                    textColor="secondary"
+                    indicatorColor="secondary"
+                    aria-label="basic tabs example">
                       <Tab label="Experiences" {...a11yProps(0)}/>
                       <Tab label="Education" {...a11yProps(1)}/>
                       <Tab label="Skills" {...a11yProps(2)}/>
