@@ -20,6 +20,7 @@ import {
 import profilepic from '../assets/vivy.png'
 import '@fontsource/roboto/500.css'
 import '../styles/App.css'
+import image from '../assets/vivy.png'
 import React from 'react'
 
 interface TabPanelProps{
@@ -96,7 +97,7 @@ function App() {
                   component='img'
                   alt='viv'
                   sx={{height: 250}}
-                  image='/assets/vivy.png'
+                  image={image}
                 />
                 <CardContent>
                   <Typography variant='h6' component='h5'>
