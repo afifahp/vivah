@@ -202,7 +202,7 @@ function App() {
                                   variant="body2"
                                   color="text.primary"
                                 >
-                                  SOFTWARE ENGINER (RPL)
+                                  SOFTWARE ENGINEER (RPL)
                                 </Typography>
                                 {" — Learning Network Configuration, Programming Language, Program Development, Graphic Design, UI/UX Development, 3D Modeling and Mobile Programming."}
                               </React.Fragment>
