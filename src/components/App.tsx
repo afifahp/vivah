@@ -86,7 +86,7 @@ function App() {
                     <Avatar 
                     alt='Vivy'
                     srcSet={profilepic}
-                    sx={{width : 72, height : 72}}/>
+                    sx={{width : 75, height : 75}}/>
                   }
 
                   title="Afifah Putri Witjaksono"
@@ -96,7 +96,7 @@ function App() {
                 <CardMedia
                   component='img'
                   alt='viv'
-                  sx={{height: 250}}
+                  sx={{height: 350}}
                   srcSet={image}
                 />
                 <CardContent>
